@@ -1,29 +1,27 @@
 import numpy as np
 
-arr = np.loadtxt('./space.csv', delimiter=';', dtype=str, encoding='utf-8')
+arr = np.loadtxt('../Cap.4 - NumPy/space.csv', delimiter=';', dtype=str, encoding='utf-8')
 
-#1
+#1 Apresente a porcentagem de quantas missões deram certo
 arr2= arr[1:,7].copy()
 
 success= arr2[arr2 == 'Success'].size / arr2.size
 
 print(f'Missoes bem sucedidas:{success: .2%}')
 
-#2
-
+#2 Qual a média de gastos de uma missão espacial se baseando em missões que possuam valores disponíveis (>0)
 arr3= arr[1:,6].copy()
 
 print(f'Media de gastos {round(sum(map(float, arr3))/ arr3.size, 2)}')
 
-#3
-
+#3 Encontre quantas missões espaciasis neste DataSet foram realizadas pelos EUA
 arr4= arr[1:,2].copy()
 
 usa = arr4[np.char.find(arr4,'USA') != -1].size
 
 print(f'{usa} missoes foram realizadas pelos EUA')
 
-#4
+#4 Encontre qual foi a missão mais cara realizada pela "SpaceX"
 
 arr5 = arr[1:].copy()
 
@@ -37,7 +35,7 @@ print('Essas foram as missoes mais caras realizadas pela SpaceX:')
 print(arr5[np.char.startswith(arr5[:,6],str(max_value))])
 
 
-#5
+#5 Mostre o nome das empresas que já realizaram Missões Espaciais juntamente com sua respectivas quantidades de missões
 arr5 = arr[1:].copy()
 arr7 = arr[1:,1].copy()
 
