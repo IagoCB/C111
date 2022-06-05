@@ -1,6 +1,6 @@
 import numpy as np
 
-arr = np.loadtxt('../Cap.4 - NumPy/space.csv', delimiter=';', dtype=str, encoding='utf-8')
+arr = np.loadtxt('space.csv', delimiter=';', dtype=str, encoding='utf-8')
 
 #1 Apresente a porcentagem de quantas missões deram certo
 arr2= arr[1:,7].copy()
